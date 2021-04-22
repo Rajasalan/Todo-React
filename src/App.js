@@ -1,12 +1,20 @@
-import React from 'react';
+
+
+ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import { BrowserRouter} from "react-router-dom";
+import { withRouter, Route, Switch } from 'react-router';
 import Main from './Components/Main';
-import Login from './Components/Login/Login'
+import Login from './Components/Login/Login';
 
 
-function App() {
+
+
+
+
+ function App() {
 
   
   return (
@@ -14,14 +22,22 @@ function App() {
     <React.Fragment>
     <CssBaseline />
    
-      <Typography component="div" style={{ backgroundColor: 'red', height: '100vh' }} > 
-     {/*  <Main/> */}
-      <Login/>
-      </Typography>
+     
+      <BrowserRouter>
+      <Switch>
+                
+                <Route exact path="/Main" component={withRouter (Main)}  />
+                <Route path="/Login" component={withRouter(Login)} />
+              
+            </Switch>
+            </BrowserRouter>
+     {/*  <Main/>
+       <Login/> */}
+   
   
    </React.Fragment>
     
   );
 }
 
-export default App;
+export default App;   
