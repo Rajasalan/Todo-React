@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 /**
  * AppDialogBox is a component which contain add  categories dialog box.
  *  
- * @returns     Dialog 
+ * @returns Dialog 
  * 
  * {props.Title} Title of the dialog box
  *  {props.children} adds new category  and the color code text field
@@ -17,8 +17,6 @@ import Button from '@material-ui/core/Button';
  */
 
 export default function AppDialogBox(props){
-  
-  
     return (
         <Dialog 
         scroll='body' 

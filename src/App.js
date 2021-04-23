@@ -8,6 +8,7 @@ import { BrowserRouter} from "react-router-dom";
 import { withRouter, Route, Switch } from 'react-router';
 import Main from './Components/Main';
 import Login from './Components/Login/Login';
+import LogOut from './Components/LogOut/LogOut'
 
 
 
@@ -27,7 +28,9 @@ import Login from './Components/Login/Login';
       <Switch>
                 
                 <Route exact path="/Main" component={withRouter (Main)}  />
-                <Route path="/Login" component={withRouter(Login)} />
+                <Route path="/" component={withRouter(Login)} />
+                
+                
               
             </Switch>
             </BrowserRouter>

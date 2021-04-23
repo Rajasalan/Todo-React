@@ -2,15 +2,15 @@
 
 const Category=[
     {
-       Name:'Home Work',
+       Name:'Weekly Meeting',
        Color: "#38c9ff",
     },
     {
-       Name:'Assignments',
+       Name:'Project Delivery Review',
        Color: "#ffab38",
     },
     {
-        Name:'Work',
+        Name:'Follow up',
         Color: "#ff3838",
     }
     

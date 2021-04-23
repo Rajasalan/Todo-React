@@ -1,21 +1,20 @@
 import React from 'react';
 import useStyles from "./MainCss";
 import { Card } from '@material-ui/core';
+import Link from '@material-ui/core/Link';
 
 /**
- * ChangeStatus this component is used to view all the status
+ * ChangeStatus this component is used to view all the task status(eg: all, ongoing, completed)
  *  
  * @method viewTasks
- 
  */
+
 export default function ChangeStatus(props){
 
     const classes = useStyles();
     const StatusItems=["ALL","ONGOING","COMPLETED"];
-
     const viewTasks=(Status)=>{
         var  StatusElems=document.getElementById(Status.Item).parentElement.getElementsByTagName('a');
-
         for(var i=0;i<StatusElems.length;i++)
         {
             if(StatusElems[i].id===Status.Item)
@@ -24,10 +23,8 @@ export default function ChangeStatus(props){
             StatusElems[i].className=classes.anchorMenu
         }
 
-        props.StatusTasks(Status.Item)
-       
+        props.StatusTasks(Status.Item) 
     }
-
     return (
         <React.Fragment>
         <Card className={classes.root}>
@@ -38,17 +35,16 @@ export default function ChangeStatus(props){
             {
                 if(index===0)
                 { return(
-                <a className={classes.anchorSelected} id={Item} onClick={()=>viewTasks({Item})} href="javascript:void(0)" >
+                <Link className={classes.anchorSelected} id={Item} onClick={()=>viewTasks({Item})} >
                 {Item}
-                </a>
+                </Link>
                 )}
                 else
                 {return (
-                 <a className={classes.anchorMenu} id={Item} onClick={()=>viewTasks({Item})}  href="javascript:void(0)">
+                 <Link className={classes.anchorMenu} id={Item} onClick={()=>viewTasks({Item})}>
                     {Item}
-                  </a> 
-                )}  
-                
+                  </Link> 
+                )}    
             }
             )
             }

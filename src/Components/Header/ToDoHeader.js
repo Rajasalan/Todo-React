@@ -1,38 +1,36 @@
 import React from 'react';
-import TaskButtons from './TaskButtons';
-import TaskStatus from './TaskStatus';
-import todo from '../../Models/todo' ;
-import useStyles from "../MainCss";
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import LogOut from '../LogOut/LogOut'
+import TaskButtons from './TaskButtons';
+import useStyles from "../MainCss";
 
 /**
- * ToDoHeader component shows labels, category and progress bar
+ * ToDoHeader component shows labels, category and logout
  *  
  * @returns  TaskButtons
- * @returns  TaskStatus
-
+ * @returns  LogOut
  */
+
 export default function ToDoHeader() {
   const classes = useStyles();
   return (
-
     <React.Fragment>
     <Container maxWidth="sm">
     <Typography component="div" className={classes.HeaderBackground}  >
-    <div style={{ backgroundColor: 'white',paddingTop:'25px'  }}>
-    <div className={classes.divStepour}>
-    </div>
-    <div className={classes.divToDoList}>
+    <Box className={classes.divToDoList} style={{marginBottom:'70px',marginTop:'50px'}}
+     display="flex" justifyContent="space-between">
+    <Box >
     To-Do List
-    </div>
-    </div>
-    <TaskButtons />
-    <div style={{paddingBottom:'10px'}}></div>
-    <TaskStatus TodoItem={todo}/>
+    </Box>
+    <Box className={classes.divStep}>
+    <LogOut/>
+    </Box>
+    </Box>
+    <TaskButtons style={{marginRight:'10px'}} />
     </Typography>
-    </Container>
-         
+    </Container>    
   </React.Fragment>
     
   );
