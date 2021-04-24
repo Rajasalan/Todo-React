@@ -12,7 +12,9 @@ function LogOut() {
   const useStyles = makeStyles((theme) => ({
  logout:{
   width: "20ch",
-  backgroundColor: "#F77062",
+  backgroundColor: "#BD2610", 
+  color: "#FFFFFF",
+  borderRadius: 20,
   "&:hover": {
     backgroundColor: "#F77062",
     color: "#FFFFFF",
@@ -35,7 +37,7 @@ function LogOut() {
             color="red"
             className={classes.logout}
            onClick={routeChange}>
-            LogOut
+            Sign Out
           </Button>  
         </div>
     )
